@@ -1,20 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 import burguer from '../../assets/images/icon-menu.svg'
+import menuClose from '../../assets/images/icon-menu-close.svg'
+import {
+    menuVariant,
+    closeSpaceVariant,
+    enlacesMenuVariant,
+    whileClickVariant
+} from './headerAnimations'
+import { motion } from 'framer-motion'
 
 export default function Menu() {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const links = ['Home', 'New', 'Popular', 'Trending', 'Categories']
+
     return (
         <>
-            <div className="burguer">
-                <img src={burguer} alt="menu icon" />
-            </div>
+            <img
+                src={burguer}
+                alt='menu icon'
+                className='burguer'
+                onClick={() => setIsOpen(true)}
+            />
 
-            <ul className='menu'>
-                <li>Home</li>
-                <li>New</li>
-                <li>Popular</li>
-                <li>Trending</li>
-                <li>Categories</li>
-            </ul>
+            <motion.div
+                variants={closeSpaceVariant}
+                initial='closed'
+                animate={isOpen ? 'open' : 'closed'}
+                onClick={() => setIsOpen(false)}
+                className='closeSpace'
+            ></motion.div>
+
+            <motion.div
+                variants={menuVariant}
+                initial='closed'
+                animate={isOpen ? 'open' : 'closed'}
+                className='container-menu'
+            >
+                <img
+                    src={menuClose}
+                    alt='menu icon'
+                    className='closeMenu'
+                    onClick={() => setIsOpen(false)}
+                />
+
+                <ul className='menu weight-400'>
+                    {links.map((link) => (
+                        <motion.li
+                        key={link}
+                            variants={enlacesMenuVariant}
+                            whileTap={whileClickVariant}
+                        >
+                            {link}
+                        </motion.li>
+                    ))}
+                </ul>
+            </motion.div>
         </>
     )
 }
