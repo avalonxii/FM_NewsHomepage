@@ -1,3 +1,4 @@
+@use '../../assets/scss/responsive.scss';
 @use '../../assets/scss/colors.scss';
 
 .header{
@@ -5,12 +6,22 @@
     align-items: center;
     justify-content: space-between;
 
+    color: colors.$neutral-Very-dark-blue;
+
     .logo{
         scale: 0.9;
+        
+        @include responsive.desktop {
+            background-color: red;
+        }
     }
 
     .burguer{
         scale: 1.2;
+
+        @include responsive.desktop {
+            display: none;
+        }
     }
 
     .closeSpace{
@@ -22,6 +33,10 @@
         height: 100%;
 
         position: absolute;
+
+        @include responsive.desktop {
+            display: none;
+        }
     }
 
     .container-menu{
@@ -37,6 +52,12 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
+
+
+        @include responsive.desktop {
+            position: relative;
+            right: 0;
+        }
   
         .closeMenu{
             align-self: center;
@@ -49,10 +70,12 @@
             flex-direction: column;
             padding-top: 6rem;
 
-            gap: 1rem;
+            gap: 1.6rem;
             list-style: none;
             font-size: 1.4rem;
-            color: colors.$neutral-Very-dark-blue;
         }
+
+        
+
     }
 }

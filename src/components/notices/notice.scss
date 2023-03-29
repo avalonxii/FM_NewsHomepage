@@ -1,0 +1,46 @@
+@use '../../assets/scss/colors.scss';
+
+.notices{
+    
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .card{
+        display: flex;
+        gap: 1.4rem;
+        width: 100%;
+
+        img{
+            width: 30%;
+        }
+
+        .info{
+            width: 70%;
+
+            display: flex;
+            flex-direction: column;
+
+            .num{
+                font-weight: 800;
+                font-size: 2rem;
+                color: colors.$neutral-Grayish-blue;
+            }
+
+            .title{
+                color: colors.$neutral-Very-dark-blue;
+                font-weight:800;
+                font-size: 1rem;
+                text-align: justify;
+
+                padding: 1rem 0 1rem 0;
+            }
+        }
+
+    }
+
+
+}

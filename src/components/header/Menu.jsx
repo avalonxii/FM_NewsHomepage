@@ -6,7 +6,7 @@ import {
     closeSpaceVariant,
     enlacesMenuVariant,
     whileClickVariant
-} from './headerAnimations'
+} from '../../assets/animations/headerAnimation'
 import { motion } from 'framer-motion'
 
 export default function Menu() {
@@ -14,6 +14,7 @@ export default function Menu() {
 
     const links = ['Home', 'New', 'Popular', 'Trending', 'Categories']
 
+    console.log(menuVariant);
     return (
         <>
             <img
