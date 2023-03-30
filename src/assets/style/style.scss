@@ -1,3 +1,6 @@
+@use '../../assets/scss/responsive.scss';
+
+
 *{
     margin: 0;
     padding: 0;
@@ -9,4 +12,8 @@
 
 body{
     padding: 5%;
+    
+    @include responsive.desktop {
+        padding: 5% 10% 5% 10%;
+    }
 }

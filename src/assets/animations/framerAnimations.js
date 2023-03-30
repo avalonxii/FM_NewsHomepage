@@ -1,8 +1,8 @@
-import { useIsDesktop } from './mediaquery'
+let IsMobile = window.innerWidth <= 375 //al cargar la página, si el ancho de la pantalla es menor a 375px, entonces IsMobile = true
 
-const IsDesktop = useIsDesktop()
+// --------------------------- ANIMACIONES HEADER --------------------------- //
 
-export const menuVariant = IsDesktop
+export const menuVariant = IsMobile
     ? {
           // initial
           closed: {
@@ -22,7 +22,7 @@ export const menuVariant = IsDesktop
           open: { x: 0 }
       }
 
-export const enlacesMenuVariant = IsDesktop
+export const enlacesMenuVariant = IsMobile
     ? {
           // initial
           closed: {
@@ -40,11 +40,16 @@ export const enlacesMenuVariant = IsDesktop
       }
     : {
           closed: { opacity: 1 },
-          closed: { opacity: 1 }
+          open: { opacity: 1 }
       }
 
-export const whileClickVariant = {
+export const whileTapLinkVariant = {
     scale: 0.8
+}
+
+export const whileHoverLinkMenuVariant = {
+    color: 'hsl(5, 85%, 63%)',
+    scale: 1.1
 }
 
 export const closeSpaceVariant = {
@@ -60,4 +65,18 @@ export const closeSpaceVariant = {
             ease: 'easeInOut'
         }
     }
+}
+
+// --------------------------- ANIMACIONES BANNER --------------------------- //
+
+export const whileHoverPrimaryButton = {
+    backgroundColor: '#00001a'
+}
+
+export const whileHoverLinkNewVariant = {
+    color: 'hsl(35, 77%, 62%)'
+}
+
+export const whileHoverLinkCardVariant = {
+    color: 'hsl(5, 85%, 63%)'
 }

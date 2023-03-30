@@ -1,9 +1,11 @@
-import React from 'react'
+import { motion } from 'framer-motion'
+import { whileHoverLinkNewVariant } from '../../assets/animations/framerAnimations'
+
 
 export default function NewTexto({ info }) {
     return (
         <div className='newTexto'>
-            <h4>{info.title}</h4>
+            <motion.h4 whileHover={whileHoverLinkNewVariant}>{info.title}</motion.h4>
             <p className='font-paragraph'>{info.text}</p>
         </div>
     )

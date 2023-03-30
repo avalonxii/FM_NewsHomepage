@@ -1,3 +1,4 @@
+@use '../../assets/scss/responsive.scss';
 @use '../../assets/scss/colors.scss';
 
 .notices{
@@ -9,10 +10,18 @@
     flex-direction: column;
     gap: 2rem;
 
+    @include responsive.desktop{
+        flex-direction: row;
+    }
+
     .card{
         display: flex;
         gap: 1.4rem;
         width: 100%;
+
+        @include responsive.desktop{
+            height: 150px;
+        }
 
         img{
             width: 30%;
@@ -28,6 +37,10 @@
                 font-weight: 800;
                 font-size: 2rem;
                 color: colors.$neutral-Grayish-blue;
+
+                @include responsive.desktop{
+                    font-size: 1.7rem;
+                }
             }
 
             .title{
@@ -37,6 +50,18 @@
                 text-align: justify;
 
                 padding: 1rem 0 1rem 0;
+
+                @include responsive.desktop{
+                    padding: 0;
+                    cursor: pointer;
+
+                }
+            }
+
+            .text {
+                @include responsive.desktop{
+                    font-size: 15px;
+                }
             }
         }
 

@@ -1,5 +1,5 @@
 $breakpoint-mobile: 375px;
-$breakpoint-desktop: 1440px;
+$breakpoint-desktop: 900px;
 
 @mixin desktop {
     @media screen and (min-width: $breakpoint-desktop) {

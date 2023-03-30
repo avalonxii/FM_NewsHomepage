@@ -1,47 +1,89 @@
+@use '../../assets/scss/responsive.scss';
 @use '../../assets/scss/colors.scss';
 
 .banner{
-
     display: flex;
     flex-direction: column;
     gap: 4rem;
 
+    @include responsive.desktop {
+        flex-direction: row;
+    }
+
     .left{
+        @include responsive.desktop {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
         .fotoDesktop{
             display: none;
+
+            @include responsive.desktop {
+                display: block;
+                width: 100%;
+            }
         }
     
         .fotoMobile{
             width: 100%;
             margin-top: 1.6rem;
+
+            @include responsive.desktop {
+                display: none;
+            }
         }
     
         color: colors.$neutral-Very-dark-blue;
     
         .bottom{
+            @include responsive.desktop {
+
+                display: flex;
+                flex-direction: row;
+                gap: 4rem
+            }
+
             h2{
                 font-size: 2.5rem;
-                line-height: 40px;
                 padding: 1rem 0 1rem 0;
                 font-weight: 800;
+
+                @include responsive.desktop{
+                    font-size: 2rem;
+                    padding: 0;
+
+                    
+                }
+            }
+
+            .banner-text{
+                @include responsive.desktop {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+
+                }
+
                 
-            }
-    
-            p{
-                font-family: 'Alata', sans-serif;
-                font-weight: 400;
-            }
-    
-            button{
-                background-color: colors.$primary-soft-red;
-                color: white;
-                width: 200px;
-                margin-top: 1.6rem;
-    
-                letter-spacing: 0.5rem;
-                border: none;
-                padding: 1rem;
-    
+                p{
+                    font-weight: 400;
+                }
+        
+                button{
+                    background-color: colors.$primary-soft-red;
+                    color: white;
+                    width: 200px;
+                    margin-top: 1.6rem;
+        
+                    letter-spacing: 0.5rem;
+                    border: none;
+                    padding: 1rem;
+        
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -50,20 +92,26 @@
         background-color: colors.$neutral-Very-dark-blue;
         width: 100%;
 
-        padding: 1rem;
+        padding: 1.4rem;
 
         h3{
             color: colors.$primary-soft-orange;
             font-size: 2rem;
+
+            @include responsive.desktop {
+                margin-bottom: 1.4rem;
+            }
         }
 
         .newTexto{
             padding: 2rem 0 2rem 0;
-        
+
             h4{
                 font-weight: 800;
                 color: colors.$neutral-Off-white;
                 margin-bottom: 1rem;
+
+                cursor: pointer;
             }
     
             p{

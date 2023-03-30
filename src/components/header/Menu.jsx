@@ -5,8 +5,9 @@ import {
     menuVariant,
     closeSpaceVariant,
     enlacesMenuVariant,
-    whileClickVariant
-} from '../../assets/animations/headerAnimation'
+    whileTapLinkVariant,
+    whileHoverLinkMenuVariant
+} from '../../assets/animations/framerAnimations'
 import { motion } from 'framer-motion'
 
 export default function Menu() {
@@ -14,7 +15,10 @@ export default function Menu() {
 
     const links = ['Home', 'New', 'Popular', 'Trending', 'Categories']
 
-    console.log(menuVariant);
+    const IsDesktop = window.innerWidth > 768
+    console.log(IsDesktop)
+
+    console.log(menuVariant)
     return (
         <>
             <img
@@ -48,9 +52,10 @@ export default function Menu() {
                 <ul className='menu weight-400'>
                     {links.map((link) => (
                         <motion.li
-                        key={link}
+                            key={link}
                             variants={enlacesMenuVariant}
-                            whileTap={whileClickVariant}
+                            whileTap={whileTapLinkVariant}
+                            whileHover={whileHoverLinkMenuVariant}
                         >
                             {link}
                         </motion.li>

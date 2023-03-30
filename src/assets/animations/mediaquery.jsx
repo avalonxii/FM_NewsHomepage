@@ -1,37 +1,18 @@
+import { useEffect, useState } from 'react'
 
-import { useEffect, useState } from "react"
-
-export function useMediaQuery(query) {
-    const [matches, setMatches] = useState(false)
+export function useMediaQuery() {
+    const [DeviceSize, setDeviceSize] = useState(window.innerWidth)
 
     useEffect(() => {
-        const media = window.matchMedia(query)
-        if (media.matches !== matches) {
-            setMatches(media.matches)
+        const handleWindowResize = () => {
+            setWindowSize(window.innerWidth)
         }
 
-        const listener = () => {
-            setMatches(media.matches)
-        }
-
-        if (typeof media.addEventListener === 'function') {
-            media.addEventListener('change', listener)
-        } else {
-            media.addEventListener(listener)
-        }
+        window.addEventListener('resize', handleWindowResize)
 
         return () => {
-            if (typeof media.removeEventListener === 'function') {
-                media.removeEventListener('change', listener)
-            } else {
-                media.removeEventListener(listenerList)
-            }
+            window.removeEventListener('resize', handleWindowResize)
         }
-    }, [matches, query])
+    }, [window.innerWidth])
 
-    return matches
 }
-
-// mobile first media queries
-export const useIsMobile = () => useMediaQuery('(min-width: 375px)')
-export const useIsDesktop = () => useMediaQuery('(min-width: 1440px)')
