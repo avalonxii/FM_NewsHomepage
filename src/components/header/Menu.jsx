@@ -1,24 +1,23 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import burguer from '../../assets/images/icon-menu.svg'
 import menuClose from '../../assets/images/icon-menu-close.svg'
-import {
-    menuVariant,
-    closeSpaceVariant,
-    enlacesMenuVariant,
-    whileTapLinkVariant,
-    whileHoverLinkMenuVariant
-} from '../../assets/animations/framerAnimations'
 import { motion } from 'framer-motion'
+import { AnimationContext } from '../../context/AnimationsContext'
 
 export default function Menu() {
     const [isOpen, setIsOpen] = useState(false)
 
+    const {
+        menuVariant,
+        closeSpaceVariant,
+        enlacesMenuVariant,
+        whileTapLinkVariant,
+        whileHoverLinkMenuVariant
+        
+    } = useContext(AnimationContext)
+
     const links = ['Home', 'New', 'Popular', 'Trending', 'Categories']
 
-    const IsDesktop = window.innerWidth > 768
-    console.log(IsDesktop)
-
-    console.log(menuVariant)
     return (
         <>
             <img

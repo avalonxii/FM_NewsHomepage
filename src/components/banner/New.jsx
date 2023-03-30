@@ -20,8 +20,8 @@ export default function New() {
         <div className='new'>
             <h3>New</h3>
 
-            {infos.map((info) => (
-                <NewTexto info={info} />
+            {infos.map((info,id) => (
+                <NewTexto key={id} info={info} />
             ))}
         </div>
     )

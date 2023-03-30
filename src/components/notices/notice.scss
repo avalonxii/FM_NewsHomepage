@@ -1,8 +1,7 @@
 @use '../../assets/scss/responsive.scss';
 @use '../../assets/scss/colors.scss';
 
-.notices{
-    
+.notices{    
     margin-top: 4rem;
     margin-bottom: 4rem;
 
@@ -15,12 +14,15 @@
     }
 
     .card{
+
         display: flex;
         gap: 1.4rem;
         width: 100%;
 
         @include responsive.desktop{
             height: 150px;
+
+            border-right: 1px solid colors.$neutral-Dark-grayish-blue;
         }
 
         img{

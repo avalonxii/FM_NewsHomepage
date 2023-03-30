@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion'
-import { whileHoverLinkCardVariant } from '../../assets/animations/framerAnimations'
+import { useContext } from 'react'
+import { AnimationContext } from '../../context/AnimationsContext'
 
 
 
 export default function Card({ notice }) {
+
+    const {whileHoverLinkCardVariant} = useContext(AnimationContext)
+
     return (
         <div className='card'>
             <img src={notice.img} alt={notice.title} />

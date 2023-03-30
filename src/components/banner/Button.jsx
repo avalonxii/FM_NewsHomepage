@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion'
-import { whileHoverPrimaryButton } from '../../assets/animations/framerAnimations'
+import { useContext } from 'react'
+import { AnimationContext } from '../../context/AnimationsContext'
 
 export default function Button() {
+
+    const {whileHoverPrimaryButton} = useContext(AnimationContext)
+
     return (
         <motion.button
             whileHover={whileHoverPrimaryButton}
