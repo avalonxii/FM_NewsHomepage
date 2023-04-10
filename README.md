@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/news-homepage-con-reactjs-scss-y-framer-motion-JmXzt_ODHn)
--   Live Site URL: [Add live site URL here](https://practica-newshomepage.web.app)
+-   Solution URL: [solution on Frontend Mentor](https://www.frontendmentor.io/solutions/news-homepage-con-reactjs-scss-y-framer-motion-JmXzt_ODHn)
+-   Live Site URL: [solution on web site](https://practica-newshomepage.web.app)
 
 ## My process
 
