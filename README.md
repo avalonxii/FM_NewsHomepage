@@ -39,7 +39,7 @@ I've started seeing what would be the better html schema and layouts (flexbox an
 ### Built with
 
 -   Semantic HTML5 markup
--   SCSS
+-   [SCSS](https://sass-lang.com/guide) - style
 -   Flexbox
 -   CSS Grid
 -   Mobile-first workflow
